@@ -14,6 +14,7 @@ public class OrdersValidator {
         validateOrderFormat(ordersText);
         validateMenuExistence(ordersText);
         validateDuplicate(ordersText);
+        validateBeverageOnlyOrder(ordersText);
     }
 
     private static void validateOrderFormat(String ordersText) {
@@ -55,6 +56,15 @@ public class OrdersValidator {
         }
     }
 
+    private static void validateBeverageOnlyOrder(String ordersText) {
+        List<String> beverages = getBeverages();
+        List<String> orderedItems = getOrderedMenuNames(ordersText);
+
+        if (orderedItems.isEmpty() || beverages.containsAll(orderedItems)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     private static List<String> getMenuNames() {
         List<String> menuNames = new ArrayList<>();
 
@@ -63,5 +73,23 @@ public class OrdersValidator {
         }
 
         return menuNames;
+    }
+
+    private static List<String> getOrderedMenuNames(String ordersText) {
+        List<String> orderedMenuNames = new ArrayList<>();
+
+        Pattern pattern = Pattern.compile(ORDERS_DUPLICATE_REGEX);
+        Matcher matcher = pattern.matcher(ordersText);
+
+        while (matcher.find()) {
+            String menuName = matcher.group(ORDER_MENU_NAME);
+            orderedMenuNames.add(menuName);
+        }
+
+        return orderedMenuNames;
+    }
+
+    private static List<String> getBeverages() {
+        return MenuType.getBeverageMenuNames();
     }
 }

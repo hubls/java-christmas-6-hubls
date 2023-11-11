@@ -1,5 +1,8 @@
 package christmas.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum MenuType {
     APPETIZER_PINE_MUSHROOM_SOUP("양송이수프", 6_000),
     APPETIZER_TAPAS("타파스", 5_500),
@@ -31,5 +34,17 @@ public enum MenuType {
 
     public int getPrice() {
         return price;
+    }
+
+    public static List<String> getBeverageMenuNames() {
+        List<String> beverageMenuNames = new ArrayList<>();
+
+        for (MenuType menuType : MenuType.values()) {
+            if (menuType.name().startsWith("BEVERAGE_")) {
+                beverageMenuNames.add(menuType.getMenuName());
+            }
+        }
+
+        return beverageMenuNames;
     }
 }
