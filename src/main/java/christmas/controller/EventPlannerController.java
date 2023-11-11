@@ -1,12 +1,11 @@
 package christmas.controller;
 
 import christmas.util.MenuParser;
-import christmas.util.Validator;
+import christmas.util.VisitDayValidator;
 import christmas.view.ErrorView;
 import christmas.view.InputView;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class EventPlannerController {
     private InputView inputView = new InputView();
@@ -23,7 +22,7 @@ public class EventPlannerController {
 
         while (true) {
             try {
-                Validator.validateVisitDay(visitDayText);
+                VisitDayValidator.validateVisitDay(visitDayText);
                 return Integer.parseInt(visitDayText);
             } catch (IllegalArgumentException e) {
                 visitDayText = errorView.repeatInputVisitDay();

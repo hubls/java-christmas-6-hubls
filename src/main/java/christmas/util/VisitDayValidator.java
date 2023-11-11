@@ -1,6 +1,6 @@
 package christmas.util;
 
-public class Validator {
+public class VisitDayValidator {
     private static final int START_DAY = 1;
     private static final int LAST_DAY = 31;
 
