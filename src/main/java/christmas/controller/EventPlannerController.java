@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.model.Receipt;
 import christmas.util.OrdersParser;
 import christmas.util.OrdersValidator;
 import christmas.util.VisitDayValidator;
@@ -20,6 +21,7 @@ public class EventPlannerController {
         HashMap<String, Integer> orders = receiveOrders();
         outputView.outputBenefitsMessage(visitDay);
         outputView.outputOrderMenus(orders);
+        printTotalAmountBeforeDiscount(orders);
     }
 
     private int receiveInputVisitDay() {
@@ -51,5 +53,11 @@ public class EventPlannerController {
     private HashMap<String, Integer> parseOrders(String ordersText) {
         OrdersValidator.validateOrders(ordersText);
         return OrdersParser.convertHashMap(ordersText);
+    }
+
+    private void printTotalAmountBeforeDiscount(HashMap<String, Integer> orders) {
+        Receipt receipt = new Receipt(orders);
+        int totalAmountBeforeDiscount = receipt.calculateTotalAmountBeforeDiscount();
+        outputView.outputTotalAmountBeforeDiscount(totalAmountBeforeDiscount);
     }
 }
