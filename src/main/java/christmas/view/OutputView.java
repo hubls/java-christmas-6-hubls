@@ -32,4 +32,10 @@ public class OutputView {
         System.out.println(decimalFormat.format(totalAmountBeforeDiscount) + KOREA_WON);
         System.out.println();
     }
+
+    public void outputGift(String gift) {
+        System.out.println(OrderSummary.GIFT_MENU.getLabel());
+        System.out.println(gift);
+        System.out.println();
+    }
 }

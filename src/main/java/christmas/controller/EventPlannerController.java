@@ -14,6 +14,7 @@ public class EventPlannerController {
     private InputView inputView = new InputView();
     private OutputView outputView = new OutputView();
     private ErrorView errorView = new ErrorView();
+    private Receipt receipt;
 
     public void start() {
         inputView.printStartMessage();
@@ -21,7 +22,9 @@ public class EventPlannerController {
         HashMap<String, Integer> orders = receiveOrders();
         outputView.outputBenefitsMessage(visitDay);
         outputView.outputOrderMenus(orders);
-        printTotalAmountBeforeDiscount(orders);
+        initializeReceipt(orders);
+        printTotalAmountBeforeDiscount();
+        printGift();
     }
 
     private int receiveInputVisitDay() {
@@ -55,9 +58,17 @@ public class EventPlannerController {
         return OrdersParser.convertHashMap(ordersText);
     }
 
-    private void printTotalAmountBeforeDiscount(HashMap<String, Integer> orders) {
-        Receipt receipt = new Receipt(orders);
+    private void initializeReceipt(HashMap<String, Integer> orders) {
+        receipt = new Receipt(orders);
+    }
+
+    private void printTotalAmountBeforeDiscount() {
         int totalAmountBeforeDiscount = receipt.calculateTotalAmountBeforeDiscount();
         outputView.outputTotalAmountBeforeDiscount(totalAmountBeforeDiscount);
+    }
+
+    private void printGift() {
+        String gift = receipt.isOverStandardAmount();
+        outputView.outputGift(gift);
     }
 }
