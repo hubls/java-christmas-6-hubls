@@ -12,6 +12,7 @@ public class OrdersValidator {
 
     public static void validateOrders(String ordersText) {
         validateOrderFormat(ordersText);
+        validateMenuExistence(ordersText);
         validateDuplicate(ordersText);
     }
 
@@ -20,6 +21,21 @@ public class OrdersValidator {
         Matcher matcher = pattern.matcher(ordersText);
         if (!matcher.matches()) {
             throw new IllegalArgumentException();
+        }
+    }
+
+    private static void validateMenuExistence(String ordersText) {
+        List<String> menus = getMenuNames();
+
+        Pattern pattern = Pattern.compile(ORDERS_DUPLICATE_REGEX);
+        Matcher matcher = pattern.matcher(ordersText);
+
+        while (matcher.find()) {
+            String menuName = matcher.group(ORDER_MENU_NAME);
+
+            if (!menus.contains(menuName)) {
+                throw new IllegalArgumentException();
+            }
         }
     }
 
