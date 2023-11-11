@@ -5,17 +5,21 @@ import christmas.util.OrdersValidator;
 import christmas.util.VisitDayValidator;
 import christmas.view.ErrorView;
 import christmas.view.InputView;
+import christmas.view.OutputView;
 
 import java.util.HashMap;
 
 public class EventPlannerController {
     private InputView inputView = new InputView();
+    private OutputView outputView = new OutputView();
     private ErrorView errorView = new ErrorView();
 
     public void start() {
         inputView.printStartMessage();
         int visitDay = receiveInputVisitDay();
         HashMap<String, Integer> orders = receiveOrders();
+        outputView.outputBenefitsMessage(visitDay);
+        outputView.outputOrderMenus(orders);
     }
 
     private int receiveInputVisitDay() {
