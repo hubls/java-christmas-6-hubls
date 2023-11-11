@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.util.OrdersParser;
+import christmas.util.OrdersValidator;
 import christmas.util.VisitDayValidator;
 import christmas.view.ErrorView;
 import christmas.view.InputView;
@@ -44,6 +45,7 @@ public class EventPlannerController {
     }
 
     private HashMap<String, Integer> parseOrders(String ordersText) {
+        OrdersValidator.validateOrders(ordersText);
         return OrdersParser.convertHashMap(ordersText);
     }
 }
