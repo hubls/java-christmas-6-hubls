@@ -1,6 +1,6 @@
 package christmas.controller;
 
-import christmas.util.MenuParser;
+import christmas.util.OrdersParser;
 import christmas.util.VisitDayValidator;
 import christmas.view.ErrorView;
 import christmas.view.InputView;
@@ -14,7 +14,7 @@ public class EventPlannerController {
     public void start() {
         inputView.printStartMessage();
         int visitDay = receiveInputVisitDay();
-        HashMap<String, Integer> menu = receiveMenu();
+        HashMap<String, Integer> orders = receiveOrders();
     }
 
     private int receiveInputVisitDay() {
@@ -30,20 +30,20 @@ public class EventPlannerController {
         }
     }
 
-    private HashMap<String, Integer> receiveMenu() {
-        String menuText = inputView.inputMenu();
+    private HashMap<String, Integer> receiveOrders() {
+        String ordersText = inputView.inputOrders();
 
         while (true) {
             try {
-                HashMap<String, Integer> menus = parseMenu(menuText);
-                return menus;
+                HashMap<String, Integer> orders = parseOrders(ordersText);
+                return orders;
             } catch (IllegalArgumentException e) {
-                menuText = errorView.repeatInputMenu();
+                ordersText = errorView.repeatInputOrders();
             }
         }
     }
 
-    private HashMap<String, Integer> parseMenu(String menuText) {
-        return MenuParser.convertHashMap(menuText);
+    private HashMap<String, Integer> parseOrders(String ordersText) {
+        return OrdersParser.convertHashMap(ordersText);
     }
 }
