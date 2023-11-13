@@ -43,4 +43,9 @@ public class OutputView {
         System.out.println(OrderSummary.BENEFIT_DETAILS.getLabel());
         System.out.println(benefit);
     }
+
+    public void outputBenefitsAmount(String benefitsAmount) {
+        System.out.println(OrderSummary.TOTAL_BENEFIT_AMOUNT.getLabel());
+        System.out.println(benefitsAmount);
+    }
 }

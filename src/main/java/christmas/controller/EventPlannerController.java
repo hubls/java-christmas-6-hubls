@@ -26,6 +26,7 @@ public class EventPlannerController {
         printTotalAmountBeforeDiscount();
         printGift();
         printBenefits();
+        printBenefitsAmount();
     }
 
     private int receiveInputVisitDay() {
@@ -76,5 +77,10 @@ public class EventPlannerController {
     private void printBenefits() {
         String benefits = receipt.getBenefits();
         outputView.outputBenefit(benefits);
+    }
+
+    private void printBenefitsAmount() {
+        String benefitsAmount = receipt.getBenefitsAmount();
+        outputView.outputBenefitsAmount(benefitsAmount);
     }
 }
