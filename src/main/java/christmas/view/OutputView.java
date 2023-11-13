@@ -2,15 +2,15 @@ package christmas.view;
 
 import christmas.util.OrderSummary;
 
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
+
+import static christmas.util.Unit.KOREA_WON;
+import static christmas.util.Unit.decimalFormat;
 
 public class OutputView {
     private static final String BENEFITS_MESSAGE = "12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!";
     private static final String OUTPUT_MENU = "%s %d개";
-    private static final String KOREA_WON = "원";
-    private DecimalFormat decimalFormat = new DecimalFormat("#,###");
 
     public void outputBenefitsMessage(int visitDay) {
         System.out.println(String.format(BENEFITS_MESSAGE, visitDay));
@@ -37,5 +37,10 @@ public class OutputView {
         System.out.println(OrderSummary.GIFT_MENU.getLabel());
         System.out.println(gift);
         System.out.println();
+    }
+
+    public void outputBenefit(String benefit) {
+        System.out.println(OrderSummary.BENEFIT_DETAILS.getLabel());
+        System.out.println(benefit);
     }
 }
