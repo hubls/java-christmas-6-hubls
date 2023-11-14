@@ -69,4 +69,8 @@ public class Receipt {
     public String getTotalAmountBeforeDiscountText() {
         return benefits.getTotalAmountAfterDiscountText(totalAmountBeforeDiscount);
     }
+
+    public String getBadgeText() {
+        return benefits.getBadgeText();
+    }
 }

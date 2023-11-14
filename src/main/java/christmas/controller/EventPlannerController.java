@@ -23,12 +23,14 @@ public class EventPlannerController {
 
         outputView.outputBenefitsMessage(visitDay);
         outputView.outputOrderMenus(orders);
+
         initializeReceipt(orders, visitDay);
         printTotalAmountBeforeDiscount();
         printGift();
         printBenefits();
         printBenefitsAmount();
         printTotalAmountAfterDiscount();
+        printBadge();
     }
 
     private int receiveInputVisitDay() {
@@ -89,5 +91,10 @@ public class EventPlannerController {
     private void printTotalAmountAfterDiscount() {
         String totalAmountAfterDiscount = receipt.getTotalAmountBeforeDiscountText();
         outputView.outputTotalAmountAfterDiscount(totalAmountAfterDiscount);
+    }
+
+    private void printBadge() {
+        String badge = receipt.getBadgeText();
+        outputView.outputBadge(badge);
     }
 }

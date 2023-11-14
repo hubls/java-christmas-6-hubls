@@ -58,4 +58,22 @@ public class Benefits {
 
         return decimalFormat.format(totalAmountAfterDiscount) + KOREA_WON;
     }
+
+    public String getBadgeText() {
+        int benefitsAmount = Math.abs(this.benefitsAmount);
+
+        if (benefitsAmount >= Badge.STAR.getMinAmount() && benefitsAmount < Badge.TREE.getMinAmount()) {
+            return Badge.STAR.getName();
+        }
+
+        if (benefitsAmount >= Badge.TREE.getMinAmount() && benefitsAmount < Badge.SANTA.getMinAmount()) {
+            return Badge.TREE.getName();
+        }
+
+        if (benefitsAmount >= Badge.SANTA.getMinAmount()) {
+            return Badge.SANTA.getName();
+        }
+
+        return Badge.NOTHING.getName();
+    }
 }

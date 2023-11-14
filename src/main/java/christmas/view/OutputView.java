@@ -53,5 +53,11 @@ public class OutputView {
     public void outputTotalAmountAfterDiscount(String totalAmountAfterDiscount) {
         System.out.println(OrderSummary.FINAL_PAYMENT_AMOUNT.getLabel());
         System.out.println(totalAmountAfterDiscount);
+        System.out.println();
+    }
+
+    public void outputBadge(String badge) {
+        System.out.println(OrderSummary.DECEMBER_EVENT_BADGE.getLabel());
+        System.out.println(badge);
     }
 }
