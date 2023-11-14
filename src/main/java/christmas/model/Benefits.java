@@ -10,7 +10,7 @@ public class Benefits {
     DateBenefit dateBenefit = new DateBenefit();
     SpecialBenefit specialBenefit = new SpecialBenefit();
     PresentationBenefit presentationBenefit = new PresentationBenefit();
-    private int amount = 0;
+    private int benefitsAmount = 0;
 
 
     public void calculate(HashMap<String, Integer> orders, int visitDay, int totalAmountBeforeDiscount) {
@@ -34,14 +34,14 @@ public class Benefits {
                 + presentationBenefit.getPresentationDiscountText();
     }
 
-    public void calculateAmount() {
-        amount = christmasBenefit.getChristmasDiscount()
+    public void calculateBenefitsAmount() {
+        benefitsAmount = christmasBenefit.getChristmasDiscount()
                 + dateBenefit.getDateDiscount()
                 + specialBenefit.getSpecialDiscount()
                 + presentationBenefit.getPresentationDiscount();
     }
 
-    public String getAmountText() {
-        return decimalFormat.format(amount) + KOREA_WON;
+    public String getBenefitsAmountText() {
+        return decimalFormat.format(benefitsAmount) + KOREA_WON;
     }
 }

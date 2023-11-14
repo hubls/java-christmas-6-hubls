@@ -80,7 +80,7 @@ public class EventPlannerController {
     }
 
     private void printBenefitsAmount() {
-        String benefitsAmount = receipt.getBenefitsAmount();
+        String benefitsAmount = receipt.getBenefitsAmountText();
         outputView.outputBenefitsAmount(benefitsAmount);
     }
 }

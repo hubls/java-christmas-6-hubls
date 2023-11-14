@@ -65,8 +65,8 @@ public class Receipt {
         return benefits.getDiscountsText();
     }
 
-    public String getBenefitsAmount() {
-        benefits.calculateAmount();
-        return benefits.getAmountText();
+    public String getBenefitsAmountText() {
+        benefits.calculateBenefitsAmount();
+        return benefits.getBenefitsAmountText();
     }
 }
