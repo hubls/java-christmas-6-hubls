@@ -10,6 +10,8 @@ public class Unit {
     public static final int STANDARD_AMOUNT = 120000;
     public static final int DISCOUNT_STANDARD_AMOUNT = 10000;
     public static final String NUMBER_OF_GIFT = " 1개";
+    public static final String BENEFITS_MESSAGE = "12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!";
+    public static final String OUTPUT_MENU = "%s %d개";
     private Unit() {
 
     }

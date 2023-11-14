@@ -5,12 +5,9 @@ import christmas.util.OrderSummary;
 import java.util.HashMap;
 import java.util.Map;
 
-import static christmas.util.Unit.KOREA_WON;
-import static christmas.util.Unit.decimalFormat;
+import static christmas.util.Unit.*;
 
 public class OutputView {
-    private static final String BENEFITS_MESSAGE = "12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!";
-    private static final String OUTPUT_MENU = "%s %d개";
 
     public void outputBenefitsMessage(int visitDay) {
         System.out.println(String.format(BENEFITS_MESSAGE, visitDay));
