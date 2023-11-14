@@ -20,6 +20,7 @@ public class EventPlannerController {
         inputView.printStartMessage();
         int visitDay = receiveInputVisitDay();
         HashMap<String, Integer> orders = receiveOrders();
+
         outputView.outputBenefitsMessage(visitDay);
         outputView.outputOrderMenus(orders);
         initializeReceipt(orders, visitDay);
@@ -27,6 +28,7 @@ public class EventPlannerController {
         printGift();
         printBenefits();
         printBenefitsAmount();
+        printTotalAmountAfterDiscount();
     }
 
     private int receiveInputVisitDay() {
@@ -82,5 +84,10 @@ public class EventPlannerController {
     private void printBenefitsAmount() {
         String benefitsAmount = receipt.getBenefitsAmountText();
         outputView.outputBenefitsAmount(benefitsAmount);
+    }
+
+    private void printTotalAmountAfterDiscount() {
+        String totalAmountAfterDiscount = receipt.getTotalAmountBeforeDiscountText();
+        outputView.outputTotalAmountAfterDiscount(totalAmountAfterDiscount);
     }
 }

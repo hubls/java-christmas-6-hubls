@@ -65,4 +65,8 @@ public class Receipt {
         benefits.calculateBenefitsAmount();
         return benefits.getBenefitsAmountText();
     }
+
+    public String getTotalAmountBeforeDiscountText() {
+        return benefits.getTotalAmountAfterDiscountText(totalAmountBeforeDiscount);
+    }
 }

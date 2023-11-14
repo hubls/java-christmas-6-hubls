@@ -44,4 +44,18 @@ public class Benefits {
     public String getBenefitsAmountText() {
         return decimalFormat.format(benefitsAmount) + KOREA_WON;
     }
+
+    public String getTotalAmountAfterDiscountText(int totalAmountBeforeDiscount) {
+        int totalAmountAfterDiscount = 0;
+
+        if (presentationBenefit.getPresentationDiscount() == 0) {
+            totalAmountAfterDiscount = totalAmountBeforeDiscount + benefitsAmount;
+        }
+
+        if (presentationBenefit.getPresentationDiscount() != 0) {
+            totalAmountAfterDiscount = totalAmountBeforeDiscount + benefitsAmount - presentationBenefit.getPresentationDiscount();
+        }
+
+        return decimalFormat.format(totalAmountAfterDiscount) + KOREA_WON;
+    }
 }
