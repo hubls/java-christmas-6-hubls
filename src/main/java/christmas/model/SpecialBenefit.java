@@ -17,7 +17,9 @@ public class SpecialBenefit {
     }
 
     public void makeSpecialDiscountText() {
-        specialDiscountText = SPECIAL_DISCOUNT_MESSAGE + decimalFormat.format(DISCOUNT_UNIT) + KOREA_WON + LINE_SEPARATOR;
+        if (specialDiscount != 0) {
+            specialDiscountText = SPECIAL_DISCOUNT_MESSAGE + decimalFormat.format(specialDiscount) + KOREA_WON + LINE_SEPARATOR;
+        }
     }
 
     public String getSpecialDiscountText() {

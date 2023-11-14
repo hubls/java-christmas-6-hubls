@@ -16,7 +16,9 @@ public class PresentationBenefit {
     }
 
     public void makePresentationDiscountText() {
-        presentationDiscountText = PRESENTATION_BENEFIT_MESSAGE + decimalFormat.format(presentationDiscount) + KOREA_WON + LINE_SEPARATOR;
+        if (presentationDiscount != 0) {
+            presentationDiscountText = PRESENTATION_BENEFIT_MESSAGE + decimalFormat.format(presentationDiscount) + KOREA_WON + LINE_SEPARATOR;
+        }
     }
 
     public String getPresentationDiscountText() {
