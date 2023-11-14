@@ -5,13 +5,9 @@ import christmas.util.MenuType;
 import java.util.HashMap;
 import java.util.Map;
 
-import static christmas.util.Unit.LINE_SEPARATOR;
-import static christmas.util.Unit.NOTHING;
+import static christmas.util.Unit.*;
 
 public class Receipt {
-    private static final int STANDARD_AMOUNT = 120000;
-    private static final int DISCOUNT_STANDARD_AMOUNT = 10000;
-    private static final String NUMBER_OF_GIFT = " 1개";
     private final HashMap<String, Integer> orderMenus;
     private final int totalAmountBeforeDiscount;
     private final int visitDay;
