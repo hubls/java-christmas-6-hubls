@@ -1,8 +1,8 @@
 package christmas.model;
 
-import static christmas.util.Unit.KOREA_WON;
-import static christmas.util.Unit.decimalFormat;
-import static christmas.util.Unit.LINE_SEPARATOR;
+import static christmas.util.MiscItems.KOREA_WON;
+import static christmas.util.MiscItems.decimalFormat;
+import static christmas.util.MiscItems.LINE_SEPARATOR;
 
 public class SpecialBenefit {
     private static final String SPECIAL_DISCOUNT_MESSAGE = "특별 할인: ";

@@ -5,7 +5,7 @@ import christmas.util.OrderSummary;
 import java.util.HashMap;
 import java.util.Map;
 
-import static christmas.util.Unit.*;
+import static christmas.util.MiscItems.*;
 
 public class OutputView {
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import static christmas.model.DayType.WEEKDAY;
 import static christmas.model.DayType.WEEKEND;
-import static christmas.util.Unit.*;
+import static christmas.util.MiscItems.*;
 
 public class DateBenefit {
     private static final String WEEKDAY_DISCOUNT_MESSAGE = "평일 할인: ";
@@ -14,7 +14,6 @@ public class DateBenefit {
     private static final int DISCOUNT_UNIT = 2023;
     private int dateDiscount = 0;
     private String dateDiscountText = "";
-
 
     public void calculate(int visitDay, HashMap<String, Integer> orders) {
         if (DayType.getDayType(visitDay) == WEEKDAY) {

@@ -1,6 +1,6 @@
 package christmas.model;
 
-import static christmas.util.Unit.*;
+import static christmas.util.MiscItems.*;
 
 public class ChristmasBenefit {
     private static final int START_DAY = 1;

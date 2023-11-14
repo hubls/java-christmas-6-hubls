@@ -2,8 +2,8 @@ package christmas.model;
 
 import java.util.HashMap;
 
-import static christmas.util.Unit.KOREA_WON;
-import static christmas.util.Unit.decimalFormat;
+import static christmas.util.MiscItems.KOREA_WON;
+import static christmas.util.MiscItems.decimalFormat;
 
 public class Benefits {
     ChristmasBenefit christmasBenefit = new ChristmasBenefit();

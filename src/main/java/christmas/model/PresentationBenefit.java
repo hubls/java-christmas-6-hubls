@@ -2,7 +2,7 @@ package christmas.model;
 
 import christmas.util.MenuType;
 
-import static christmas.util.Unit.*;
+import static christmas.util.MiscItems.*;
 
 public class PresentationBenefit {
     private static final String PRESENTATION_BENEFIT_MESSAGE = "증정 이벤트: ";
